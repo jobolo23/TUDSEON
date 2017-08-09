@@ -297,3 +297,7 @@ html { height: 100%;}
 .main-content{
     left: -20%;
 }
+.mcMap{
+    width: 100%;
+    height: 80%;
+}
