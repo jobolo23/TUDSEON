@@ -61,11 +61,20 @@
                     var contentContainer = $('#main-content');
                     contentContainer.load('login.html');
 
-
                 } else if (hash == "#register") {
                     var contentContainer = $('#main-content');
                     contentContainer.load('register.html');
-                }else if(hash==""){
+                }
+                else if (hash == "#minecraft") {
+                    var contentContainer = $('#main-content');
+                    contentContainer.load('minecraft.html');
+                }
+                else if (hash == "#overwatch") {
+                    var contentContainer = $('#main-content');
+                    contentContainer.load('overwatch.html');
+                }
+                
+                else{
                     var contentContainer = $('#main-content');
                     contentContainer.load('home.html');
                 }
@@ -97,6 +106,12 @@
                 </li>
                 <li>
                     <a href="#register" class="menu-item">Register</a>
+                </li>
+                <li>
+                    <a href="#overwatch" class="menu-item">Overwatch</a>
+                </li>
+                <li>
+                    <a href="#Minecraft" class="menu-item">Minecraft</a>
                 </li>
                 <li>
                     <a href="https://twitter.com/jobolo23">Follow me</a>
