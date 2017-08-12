@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Google.Cloud.Diagnostics.AspNetCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -8,27 +13,79 @@ namespace Tudseon
 {
     public class Startup
     {
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
+        }
+
+        public IConfigurationRoot Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add framework services.
+            services.AddMvc();
+            services.AddGoogleTrace(GetProjectId());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
+            var projectId = GetProjectId();
+
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddGoogle(projectId);
+            loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseGoogleExceptionLogging(projectId,
+                    Configuration["GoogleErrorReporting:ServiceName"],
+                    Configuration["GoogleErrorReporting:Version"]);
             }
 
-            app.Run(async (context) =>
+            app.UseStaticFiles();
+            app.UseGoogleTrace();
+
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Welcome to Tudseon!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        private string GetProjectId()
+        {
+            string projectId = Configuration["ProjectId"];
+            if (projectId == ("YOUR-PROJECT-ID"))
+            {
+                throw new Exception("Update appsettings.json and replace YOUR-PROJECT-ID"
+                    + " with your Google Cloud Project ID, and recompile.");
+            }
+            if (projectId == null)
+            {
+                var instance = Google.Api.Gax.Platform.Instance();
+                projectId = instance.GceDetails?.ProjectId ?? instance.GaeDetails?.ProjectId;
+                if (projectId == null)
+                {
+                    throw new Exception("The logging, tracing and error reporting libraries need a project ID. "
+                        + "Update appsettings.json and replace YOUR-PROJECT-ID with your "
+                        + "Google Cloud Project ID, and recompile.");
+                }
+            }
+            return projectId;
+        }
     }
-    // [END sample]
 }

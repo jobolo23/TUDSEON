@@ -1,8 +1,8 @@
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\bin\Release\netcoreapp1.0\Tudseon.deps.json
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\bin\Release\netcoreapp1.0\Tudseon.runtimeconfig.json
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\bin\Release\netcoreapp1.0\Tudseon.runtimeconfig.dev.json
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\bin\Release\netcoreapp1.0\Tudseon.dll
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\bin\Release\netcoreapp1.0\Tudseon.pdb
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\obj\Release\netcoreapp1.0\Tudseon.AssemblyInfo.cs
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\obj\Release\netcoreapp1.0\Tudseon.dll
-D:\WORK\AppEngineAPPS\TUDSEON\tudseon\obj\Release\netcoreapp1.0\Tudseon.pdb
+D:\WORK\Tudseon\Tudseon\Tudseon\bin\Release\netcoreapp1.0\Tudseon.deps.json
+D:\WORK\Tudseon\Tudseon\Tudseon\bin\Release\netcoreapp1.0\Tudseon.runtimeconfig.json
+D:\WORK\Tudseon\Tudseon\Tudseon\bin\Release\netcoreapp1.0\Tudseon.runtimeconfig.dev.json
+D:\WORK\Tudseon\Tudseon\Tudseon\bin\Release\netcoreapp1.0\Tudseon.dll
+D:\WORK\Tudseon\Tudseon\Tudseon\bin\Release\netcoreapp1.0\Tudseon.pdb
+D:\WORK\Tudseon\Tudseon\Tudseon\obj\Release\netcoreapp1.0\Tudseon.AssemblyInfo.cs
+D:\WORK\Tudseon\Tudseon\Tudseon\obj\Release\netcoreapp1.0\Tudseon.dll
+D:\WORK\Tudseon\Tudseon\Tudseon\obj\Release\netcoreapp1.0\Tudseon.pdb
