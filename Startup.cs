@@ -68,20 +68,22 @@ namespace Tudseon
 
         private string GetProjectId()
         {
-            var projectId = Configuration["ProjectId"];
+            string projectId = Configuration["ProjectId"];
             if (projectId == ("YOUR-PROJECT-ID"))
             {
                 throw new Exception("Update appsettings.json and replace YOUR-PROJECT-ID"
-                                    + " with your Google Cloud Project ID, and recompile.");
+                    + " with your Google Cloud Project ID, and recompile.");
             }
-            if (projectId != null) return projectId;
-            var instance = Google.Api.Gax.Platform.Instance();
-            projectId = instance.GceDetails?.ProjectId ?? instance.GaeDetails?.ProjectId;
             if (projectId == null)
             {
-                throw new Exception("The logging, tracing and error reporting libraries need a project ID. "
-                                    + "Update appsettings.json and replace YOUR-PROJECT-ID with your "
-                                    + "Google Cloud Project ID, and recompile.");
+                var instance = Google.Api.Gax.Platform.Instance();
+                projectId = instance.GceDetails?.ProjectId ?? instance.GaeDetails?.ProjectId;
+                if (projectId == null)
+                {
+                    throw new Exception("The logging, tracing and error reporting libraries need a project ID. "
+                        + "Update appsettings.json and replace YOUR-PROJECT-ID with your "
+                        + "Google Cloud Project ID, and recompile.");
+                }
             }
             return projectId;
         }

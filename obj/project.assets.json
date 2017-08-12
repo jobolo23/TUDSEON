@@ -10395,15 +10395,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jobol\\.nuget\\packages\\": {}
+    "C:\\Users\\danie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jobol\\Desktop\\tudseonpage\\TUDSEON\\Tudseon.csproj",
+      "projectUniqueName": "D:\\WORK\\Tudseon\\Tudseon\\Tudseon\\Tudseon.csproj",
       "projectName": "Tudseon",
-      "projectPath": "C:\\Users\\jobol\\Desktop\\tudseonpage\\TUDSEON\\Tudseon.csproj",
-      "outputPath": "C:\\Users\\jobol\\Desktop\\tudseonpage\\TUDSEON\\obj\\",
+      "projectPath": "D:\\WORK\\Tudseon\\Tudseon\\Tudseon\\Tudseon.csproj",
+      "outputPath": "D:\\WORK\\Tudseon\\Tudseon\\Tudseon\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.0"
