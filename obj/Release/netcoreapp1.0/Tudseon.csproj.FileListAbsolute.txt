@@ -6,3 +6,11 @@ D:\WORK\Tudseon\Tudseon\Tudseon\bin\Release\netcoreapp1.0\Tudseon.pdb
 D:\WORK\Tudseon\Tudseon\Tudseon\obj\Release\netcoreapp1.0\Tudseon.AssemblyInfo.cs
 D:\WORK\Tudseon\Tudseon\Tudseon\obj\Release\netcoreapp1.0\Tudseon.dll
 D:\WORK\Tudseon\Tudseon\Tudseon\obj\Release\netcoreapp1.0\Tudseon.pdb
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\bin\Release\netcoreapp1.0\Tudseon.deps.json
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\bin\Release\netcoreapp1.0\Tudseon.runtimeconfig.json
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\bin\Release\netcoreapp1.0\Tudseon.runtimeconfig.dev.json
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\bin\Release\netcoreapp1.0\Tudseon.dll
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\bin\Release\netcoreapp1.0\Tudseon.pdb
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\obj\Release\netcoreapp1.0\Tudseon.AssemblyInfo.cs
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\obj\Release\netcoreapp1.0\Tudseon.dll
+C:\Users\jobol\Desktop\tudseonpage\TUDSEON\obj\Release\netcoreapp1.0\Tudseon.pdb

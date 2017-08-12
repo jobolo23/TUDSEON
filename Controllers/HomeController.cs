@@ -15,8 +15,6 @@ namespace Tudseon.Controllers
 
         public IActionResult Login()
         {
-            //ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
